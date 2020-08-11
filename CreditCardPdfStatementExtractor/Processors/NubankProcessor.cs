@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace CreditCardPdfStatementExtractor.Processors
 {
+    //TODO: Create interface for all processors
     public static class NubankProcessor
     {
         public static void Process(string pageText)
@@ -23,6 +24,7 @@ namespace CreditCardPdfStatementExtractor.Processors
                         value = value.Substring(2);
                     }
 
+                    //TODO: Remove Console dependencies
                     Console.WriteLine($"{match.Groups[1].Value};{entry};{value}");
                     //Console.WriteLine($"{match.Groups[1].Value};{match.Groups[2].Value.Trim()};{match.Groups[3].Value}");
                 }

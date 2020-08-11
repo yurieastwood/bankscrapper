@@ -7,6 +7,8 @@ using UglyToad.PdfPig;
 
 namespace CreditCardPdfStatementExtractor
 {
+    //TODO: Add README to explain the solution
+    //TODO: Make solution available for community in in Github!
     class Program
     {
         static void Main(string[] args)
@@ -26,6 +28,9 @@ namespace CreditCardPdfStatementExtractor
                     foreach (var page in document.GetPages())
                     {
                         //Console.WriteLine($"Page {page.Number}: {pageText}");
+
+                        //TODO: Create other cards processors
+                        //TODO: Create a Factory to deal with processors creation
                         NubankProcessor.Process(page.Text);
                     }
                 }
