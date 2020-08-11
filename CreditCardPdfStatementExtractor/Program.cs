@@ -13,12 +13,13 @@ namespace CreditCardPdfStatementExtractor
     {
         static void Main(string[] args)
         {
+            //TODO: Get this configs from program input, text file or hard coded
             var root = @"/Users/yurieastwood/Downloads";
             var folders = new List<string>{ "cartao-nubank", "cartao-itau-5827", "cartao-itau-6788" };
 
             foreach (var folder in folders)
             {
-                var files = Directory.GetFileSystemEntries(Path.Combine(root, folder));
+                var files = Directory.GetFileSystemEntries(Path.Combine(root, folder), "*.pdf", SearchOption.TopDirectoryOnly);
 
                 foreach (var file in files)
                 {
