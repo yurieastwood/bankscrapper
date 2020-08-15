@@ -28,15 +28,32 @@ namespace CreditCardPdfStatementExtractor
 
                     foreach (var page in document.GetPages())
                     {
+                        var processor = ProcessorFactory.CreateNew(folder);
+                        List<string> output;
                         //Console.WriteLine($"Page {page.Number}: {pageText}");
 
                         //TODO: Create other cards processors
                         //TODO: Create a Factory to deal with processors creation
-                        NubankProcessor.Process(page.Text);
+
+                        switch (folder)
+                        {
+                            case "cartao-nubank":
+                                output = NubankProcessor.ProcessTransactions(page.Text);
+                                break;
+                            default:
+                                //output = "Unknown configuration or processor doesn't exist.";
+                                output = new List<string>();
+                                break;
+                        }
+
+                        if (output.Count > 0)
+                        {
+                            foreach (var entry in output)
+                                Console.WriteLine(entry);
+                        }
+                            
                     }
                 }
-
-                return;
             }
         }
     }
