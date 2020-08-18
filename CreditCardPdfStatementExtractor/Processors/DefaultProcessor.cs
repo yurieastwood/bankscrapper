@@ -1,8 +1,10 @@
-﻿namespace CreditCardPdfStatementExtractor.Processors
+﻿using System.Collections.Generic;
+
+namespace CreditCardPdfStatementExtractor.Processors
 {
-    internal class DefaultProcessor : IProcessor
+    internal abstract class DefaultProcessor : IProcessor
     {
-        public void Process()
+        public List<string> ProcessTransactions(string pageText)
         {
             throw new System.NotImplementedException();
         }

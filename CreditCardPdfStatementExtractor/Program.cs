@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using CreditCardPdfStatementExtractor.Processors;
+using CreditCardPdfStatementExtractor.Enums;
 using UglyToad.PdfPig;
 
 namespace CreditCardPdfStatementExtractor
@@ -28,30 +29,23 @@ namespace CreditCardPdfStatementExtractor
 
                     foreach (var page in document.GetPages())
                     {
-                        var processor = ProcessorFactory.CreateNew(folder);
-                        List<string> output;
+                        var success = Enum.TryParse<Bank>(folder.Split('-')[1], true, out var bank);
+                        var processor = ProcessorFactory.CreateNew(bank);
+                        
                         //Console.WriteLine($"Page {page.Number}: {pageText}");
-
-                        //TODO: Create other cards processors
-                        //TODO: Create a Factory to deal with processors creation
-
-                        switch (folder)
+                        if (success)
                         {
-                            case "cartao-nubank":
-                                output = NubankProcessor.ProcessTransactions(page.Text);
-                                break;
-                            default:
-                                //output = "Unknown configuration or processor doesn't exist.";
-                                output = new List<string>();
-                                break;
-                        }
+                            var output = processor.ProcessTransactions(page.Text);
 
-                        if (output.Count > 0)
+                            if (output.Count > 0)
+                            {
+                                foreach (var entry in output)
+                                    Console.WriteLine(entry);
+                            }
+                        } else
                         {
-                            foreach (var entry in output)
-                                Console.WriteLine(entry);
-                        }
-                            
+                            Console.WriteLine("Problem parsing bank name.");
+                        }  
                     }
                 }
             }

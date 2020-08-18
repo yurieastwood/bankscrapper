@@ -7,7 +7,7 @@ namespace CreditCardPdfStatementExtractor.Processors
     //TODO: Create interface for all processors
     public class NubankProcessor : IProcessor
     {
-        public static List<string> ProcessTransactions(string pageText)
+        public List<string> ProcessTransactions(string pageText)
         {
             var result = new List<string>();
 

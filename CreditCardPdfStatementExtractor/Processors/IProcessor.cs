@@ -5,9 +5,6 @@ namespace CreditCardPdfStatementExtractor.Processors
 {
     public interface IProcessor
     {
-        public static List<string> ProcessTransactions()
-        {
-            throw new NotImplementedException(nameof(ProcessTransactions));
-        }
+        public abstract List<string> ProcessTransactions(string pageText);
     }
 }

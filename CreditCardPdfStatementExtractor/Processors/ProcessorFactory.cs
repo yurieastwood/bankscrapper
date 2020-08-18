@@ -1,19 +1,21 @@
-﻿namespace CreditCardPdfStatementExtractor.Processors
+﻿using CreditCardPdfStatementExtractor.Enums;
+
+namespace CreditCardPdfStatementExtractor.Processors
 {
     public static class ProcessorFactory
     {
 
-        public static IProcessor CreateNew(string bank)
+        public static IProcessor CreateNew(Bank bank)
         {
-            IProcessor processor = new DefaultProcessor();
+            IProcessor processor;
 
             switch (bank)
             {
-                case "itau":
+                case Bank.Itau:
                     processor = new ItauProcessor();
                     break;
 
-                case "nubank":
+                case Bank.Nubank:
                 default:
                     processor = new NubankProcessor();
                     break;
