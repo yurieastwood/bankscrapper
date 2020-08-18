@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardPdfStatementExtractor", "CreditCardPdfStatementExtractor\CreditCardPdfStatementExtractor.csproj", "{2E838FC9-A4E7-4846-BB96-563A4EFB75AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardStatementScrapper", "CreditCardPdfStatementExtractor\CreditCardStatementScrapper.csproj", "{2E838FC9-A4E7-4846-BB96-563A4EFB75AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
