@@ -7,8 +7,7 @@ This is a work in progress, feel free to contribute in any way.
 
 ## Current Supported Banks
 
-| Name                                                                                                                                                                                          | Balance | Additional Info                                                                                       | Method                               | Status |
-| ---                                                                                                                                                                                           | ---     | ---                                                                                                   | ---                                  | ---    |
+| Name
 | Nubank
 
 
