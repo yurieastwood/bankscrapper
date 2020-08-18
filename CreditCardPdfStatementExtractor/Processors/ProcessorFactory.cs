@@ -1,6 +1,6 @@
-﻿using CreditCardPdfStatementExtractor.Enums;
+﻿using CreditCardStatementScrapper.Enums;
 
-namespace CreditCardPdfStatementExtractor.Processors
+namespace CreditCardStatementScrapper.Processors
 {
     public static class ProcessorFactory
     {

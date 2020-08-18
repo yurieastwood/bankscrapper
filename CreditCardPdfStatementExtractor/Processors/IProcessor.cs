@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CreditCardPdfStatementExtractor.Processors
+namespace CreditCardStatementScrapper.Processors
 {
     public interface IProcessor
     {

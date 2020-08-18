@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace CreditCardPdfStatementExtractor.Processors
+namespace CreditCardStatementScrapper.Processors
 {
     //TODO: Create interface for all processors
     public class NubankProcessor : IProcessor

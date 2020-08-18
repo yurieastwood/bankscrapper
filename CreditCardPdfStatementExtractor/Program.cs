@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using CreditCardPdfStatementExtractor.Processors;
-using CreditCardPdfStatementExtractor.Enums;
+using CreditCardStatementScrapper.Processors;
+using CreditCardStatementScrapper.Enums;
 using UglyToad.PdfPig;
 
-namespace CreditCardPdfStatementExtractor
+namespace CreditCardStatementScrapper
 {
     //TODO: Add README to explain the solution
     //TODO: Make solution available for community in in Github!

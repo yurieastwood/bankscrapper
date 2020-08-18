@@ -1,5 +1,5 @@
 ﻿using System;
-namespace CreditCardPdfStatementExtractor.Enums
+namespace CreditCardStatementScrapper.Enums
 {
     public enum Bank
     {
