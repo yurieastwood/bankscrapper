@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardStatementScrapper", "CreditCardPdfStatementExtractor\CreditCardStatementScrapper.csproj", "{2E838FC9-A4E7-4846-BB96-563A4EFB75AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardStatementScrapper", "CreditCardStatementScrapper\CreditCardStatementScrapper.csproj", "{97BC7926-C318-4CC9-8746-867778C1B4C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,9 +9,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2E838FC9-A4E7-4846-BB96-563A4EFB75AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E838FC9-A4E7-4846-BB96-563A4EFB75AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E838FC9-A4E7-4846-BB96-563A4EFB75AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E838FC9-A4E7-4846-BB96-563A4EFB75AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97BC7926-C318-4CC9-8746-867778C1B4C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97BC7926-C318-4CC9-8746-867778C1B4C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97BC7926-C318-4CC9-8746-867778C1B4C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97BC7926-C318-4CC9-8746-867778C1B4C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
