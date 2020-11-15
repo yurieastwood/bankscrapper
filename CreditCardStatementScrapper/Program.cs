@@ -4,6 +4,7 @@ using System.Linq;
 using CreditCardStatementScrapper.Processors;
 using CreditCardStatementScrapper.Enums;
 using UglyToad.PdfPig;
+using System.Text;
 
 namespace CreditCardStatementScrapper
 {
@@ -16,6 +17,7 @@ namespace CreditCardStatementScrapper
             //TODO: Get this configs from program input, text file or hard coded
             var root = @"/Users/yurieastwood/Documents/CreditCardStatements";
             var files = Directory.GetFileSystemEntries(root, "*.pdf", SearchOption.TopDirectoryOnly).OrderBy(_ => _);
+            var fileContent = new StringBuilder();
 
             Console.WriteLine($"Beggining to process statements...");
             Console.WriteLine("");
@@ -25,7 +27,7 @@ namespace CreditCardStatementScrapper
                 using var document = PdfDocument.Open(file);
                 var fileName = file.Split('/').Last();
                 var bankName = fileName.Split('-').First();
-                Console.WriteLine($"{fileName}");
+                fileContent.AppendLine($"{fileName}");
 
                 foreach (var page in document.GetPages())
                 {
@@ -40,7 +42,7 @@ namespace CreditCardStatementScrapper
                         if (output.Count > 0)
                         {
                             foreach (var entry in output)
-                                Console.WriteLine(entry);
+                                fileContent.AppendLine(entry);
                         }
                     } else
                     {
@@ -48,8 +50,13 @@ namespace CreditCardStatementScrapper
                     }
                 }
 
-                Console.WriteLine("");
+                fileContent.AppendLine("");
             }
+
+            File.WriteAllText(Path.Combine(root, "_ProcessedFiles.txt"), fileContent.ToString());
+            Console.Write(fileContent);
+
+            Console.WriteLine($"End of processing!");
         }
     }
 }
